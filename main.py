@@ -230,3 +230,4 @@ async def answer_question(question: Question, username: str = Depends(get_curren
 
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"An error occurred: {str(e)}")
+    
