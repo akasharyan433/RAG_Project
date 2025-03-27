@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+psycopg2-binary
+sentence-transformers
+python-jose
+passlib[bcrypt]
+transformers
+torch 
+python-dotenv
+pydantic[email]
