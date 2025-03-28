@@ -68,7 +68,7 @@ class Question(BaseModel):
 
 
 
-@app.post("/api/v1//register")
+@app.post("/api/v1/register")
 async def register_user(user: User):
     hashed_password = get_password_hash(user.password)
     try:
@@ -91,7 +91,7 @@ async def register_user(user: User):
 
 
 
-@app.post("/api/v1//login")
+@app.post("/api/v1/login")
 async def login_user(user: UserLogin):
     
     cursor.execute("SELECT id, password_hash FROM users WHERE username = %s", (user.username,))
@@ -109,7 +109,7 @@ async def login_user(user: UserLogin):
 
 
 
-@app.post("/api/v1//ingest")
+@app.post("/api/v1/ingest")
 async def ingest_document(doc: Document, username: str = Depends(get_current_user)):
   
     cursor.execute("SELECT id FROM users WHERE username = %s", (username,))
